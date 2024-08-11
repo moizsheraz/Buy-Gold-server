@@ -86,7 +86,7 @@ app.post('/login', async (req, res) => {
 
 // Support form endpoint
 app.post('/support', async (req, res) => {
-  const { email, category, message } = req.body;
+  const { name, email, message } = req.body;
   const newMessage = new Message({ email, category, message });
   await newMessage.save();
   res.status(201).send({ message: 'Message received' });
